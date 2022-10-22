@@ -59,6 +59,5 @@ func NewRouter() *gin.Engine {
 	// // routes.NewRoleRoutes(db, router)
 	router.Use(middleware.ErrorHandler())
 	router.Use(cors.Default())
-
 	return router
 }
