@@ -1,0 +1,116 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "OpenAPI definition",
+    "description": "This is a simple RESTful API for a library",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8080/api/v1"
+    }
+  ],
+  "paths": {},
+  "components": {
+    "schemas": {
+      "project": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "kode_sortname": {
+            "type": "string"
+          },
+          "jumlah_stakeholder": {
+            "type": "integer"
+          },
+          "nama": {
+            "type": "string"
+          },
+          "mulai_proyek": {
+            "type": "string"
+          },
+          "akhir_proyek": {
+            "type": "string"
+          },
+          "area_kerja": {
+            "type": "string"
+          },
+          "lokasi_kantor": {
+            "type": "string"
+          },
+          "rencana_biaya": {
+            "type": "string"
+          },
+          "biaya_actual": {
+            "type": "string"
+          },
+          "company": {
+            "type": "string"
+          },
+          "pm_id": {
+            "type": "integer"
+          },
+          "type_proyek": {
+            "type": "integer"
+          },
+          "persentase_progress": {
+            "type": "integer"
+          },
+          "keterangan": {
+            "type": "string"
+          },
+          "durasi_proyek": {
+            "type": "integer"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "created_by": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
+          },
+          "updated_by": {
+            "type": "string"
+          },
+          "progress_by_worklog": {
+            "type": "boolean"
+          },
+          "status": {
+            "type": "string"
+          },
+          "project_objectives": {
+            "type": "string"
+          },
+          "considered_success_when": {
+            "type": "string"
+          },
+          "potential_risk": {
+            "type": "string"
+          },
+          "testing_environtment": {
+            "type": "string"
+          },
+          "currency_symbol": {
+            "type": "string"
+          },
+          "currency_code": {
+            "type": "string"
+          },
+          "currency_name": {
+            "type": "string"
+          },
+          "phase_id": {
+            "type": "integer"
+          },
+          "budget_health": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
