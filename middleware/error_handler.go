@@ -1,7 +1,7 @@
 package middleware
 
 import (
-	"hendralijaya/user-management-project/model/web"
+	"BE-Project/model/web"
 	"net/http"
 	"strings"
 
@@ -43,7 +43,7 @@ func ErrorHandler() gin.HandlerFunc {
 			if err.Meta == "VALIDATION_ERROR" {
 				validationErrors(c, err)
 				return
-			}else if err.Meta == "NOT_FOUND" {
+			} else if err.Meta == "NOT_FOUND" {
 				notFoundError(c, err)
 				return
 			}
@@ -56,45 +56,23 @@ func ErrorHandler() gin.HandlerFunc {
 	}
 }
 
-
 func validationErrors(c *gin.Context, err *gin.Error) {
 	splittedError := strings.Split(err.Error(), "\n")
-	errors := ValidationError{}.Error(splittedError)
-	webResponse := web.WebResponse{
-		Code:   http.StatusBadRequest,
-		Status: "BAD REQUEST",
-		Errors: errors,
-		Data:   nil,
-	}
-	c.JSON(http.StatusBadRequest, webResponse)
+	errorWebResponse := web.NewWebErrorResponse(http.StatusBadRequest, "BAD REQUEST", splittedError)
+	c.JSON(http.StatusBadRequest, errorWebResponse)
 }
 
 func authenticationError(c *gin.Context, err *gin.Error) {
-	webResponse := web.WebResponse{
-		Code:   http.StatusUnauthorized,
-		Status: "UNAUTHORIZED",
-		Errors: err,
-		Data:   nil,
-	}
-	c.JSON(http.StatusUnauthorized, webResponse)
+	errorWebResponse := web.NewWebErrorResponse(http.StatusUnauthorized, "UNAUTHORIZED", err.Error())
+	c.JSON(http.StatusUnauthorized, errorWebResponse)
 }
 
 func notFoundError(c *gin.Context, err *gin.Error) {
-	webResponse := web.WebResponse{
-		Code:   http.StatusNotFound,
-		Status: "Not Found",
-		Errors: err,
-		Data:   nil,
-	}
-	c.JSON(http.StatusNotFound, webResponse)
+	errorWebResponse := web.NewWebErrorResponse(http.StatusNotFound, "Not Found", err.Error())
+	c.JSON(http.StatusNotFound, errorWebResponse)
 }
 
 func internalServerError(c *gin.Context, err *gin.Error) {
-	webResponse := web.WebResponse{
-		Code:   http.StatusInternalServerError,
-		Status: "INTERNAL SERVER ERROR",
-		Errors: err,
-		Data:   nil,
-	}
-	c.JSON(http.StatusInternalServerError, webResponse)
+	errorWebResponse := web.NewWebErrorResponse(http.StatusInternalServerError, "INTERNAL SERVER ERROR", err.Error())
+	c.JSON(http.StatusInternalServerError, errorWebResponse)
 }

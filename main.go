@@ -1,10 +1,10 @@
 package main
 
 import (
-	"hendralijaya/user-management-project/app/config"
-	"hendralijaya/user-management-project/app/routes"
-	"hendralijaya/user-management-project/helper"
-	"hendralijaya/user-management-project/middleware"
+	"BE-Project/app/config"
+	"BE-Project/app/routes"
+	"BE-Project/helper"
+	"BE-Project/middleware"
 	"log"
 	"os"
 
@@ -54,11 +54,11 @@ func NewRouter() *gin.Engine {
 	/**
 	@description Init All Route
 	*/
-	// routes.NewAuthenticationRoutes(db, router)
+	routes.NewProjectRoutes(db, router)
 	// routes.NewUserRoutes(db, router)
 	// // routes.NewRoleRoutes(db, router)
-	// router.Use(middleware.ErrorHandler())
-	// router.Use(cors.Default())
+	router.Use(middleware.ErrorHandler())
+	router.Use(cors.Default())
 
 	return router
 }
