@@ -20,7 +20,7 @@ func NewWebSuccessResponse(code int, status string, data interface{}) WebRespons
 	}
 }
 
-func NewWebErrorResponse(code int, status string, err error, data interface{}) WebResponseError {
+func NewWebErrorResponse(code int, status string, err interface{}) WebResponseError {
 	return WebResponseError{
 		Code:   code,
 		Status: status,
