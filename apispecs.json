@@ -10,35 +10,29 @@
       "url": "http://localhost:8080/api/v1"
     }
   ],
-  "paths": {
-    "/": {
-      "get": ""
-    }
-  },
+  "paths": {},
   "components": {
     "schemas": {
       "project": {
         "type": "object",
         "properties": {
           "id": {
-            "type": "integer",
-            "format": "int64"
+            "type": "integer"
           },
           "kode_sortname": {
             "type": "string"
           },
           "jumlah_stakeholder": {
-            "type": "integer",
-            "format": "int32"
+            "type": "integer"
           },
           "nama": {
             "type": "string"
           },
           "mulai_proyek": {
-            "type": "timestamp"
+            "type": "string"
           },
           "akhir_proyek": {
-            "type": "timestamp"
+            "type": "string"
           },
           "area_kerja": {
             "type": "string"
@@ -56,32 +50,28 @@
             "type": "string"
           },
           "pm_id": {
-            "type": "integer",
-            "format": "int32"
+            "type": "integer"
           },
           "type_proyek": {
-            "type": "integer",
-            "format": "int32"
+            "type": "integer"
           },
           "persentase_progress": {
-            "type": "double",
-            "format": "double"
+            "type": "integer"
           },
           "keterangan": {
             "type": "string"
           },
           "durasi_proyek": {
-            "type": "integer",
-            "format": "int32"
+            "type": "integer"
           },
           "created_at": {
-            "type": "timestamp"
+            "type": "string"
           },
           "created_by": {
             "type": "string"
           },
           "updated_at": {
-            "type": "timestamp"
+            "type": "string"
           },
           "updated_by": {
             "type": "string"
@@ -114,8 +104,7 @@
             "type": "string"
           },
           "phase_id": {
-            "type": "integer",
-            "format": "int32"
+            "type": "integer"
           },
           "budget_health": {
             "type": "string"
