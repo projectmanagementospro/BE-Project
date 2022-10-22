@@ -1,0 +1,127 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "OpenAPI definition",
+    "description": "This is a simple RESTful API for a library",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8080/api/v1"
+    }
+  ],
+  "paths": {
+    "/": {
+      "get": ""
+    }
+  },
+  "components": {
+    "schemas": {
+      "project": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "kode_sortname": {
+            "type": "string"
+          },
+          "jumlah_stakeholder": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nama": {
+            "type": "string"
+          },
+          "mulai_proyek": {
+            "type": "timestamp"
+          },
+          "akhir_proyek": {
+            "type": "timestamp"
+          },
+          "area_kerja": {
+            "type": "string"
+          },
+          "lokasi_kantor": {
+            "type": "string"
+          },
+          "rencana_biaya": {
+            "type": "string"
+          },
+          "biaya_actual": {
+            "type": "string"
+          },
+          "company": {
+            "type": "string"
+          },
+          "pm_id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "type_proyek": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "persentase_progress": {
+            "type": "double",
+            "format": "double"
+          },
+          "keterangan": {
+            "type": "string"
+          },
+          "durasi_proyek": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "created_at": {
+            "type": "timestamp"
+          },
+          "created_by": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "timestamp"
+          },
+          "updated_by": {
+            "type": "string"
+          },
+          "progress_by_worklog": {
+            "type": "boolean"
+          },
+          "status": {
+            "type": "string"
+          },
+          "project_objectives": {
+            "type": "string"
+          },
+          "considered_success_when": {
+            "type": "string"
+          },
+          "potential_risk": {
+            "type": "string"
+          },
+          "testing_environtment": {
+            "type": "string"
+          },
+          "currency_symbol": {
+            "type": "string"
+          },
+          "currency_code": {
+            "type": "string"
+          },
+          "currency_name": {
+            "type": "string"
+          },
+          "phase_id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "budget_health": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
