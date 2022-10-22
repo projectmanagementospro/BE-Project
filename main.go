@@ -2,12 +2,15 @@ package main
 
 import (
 	"BE-Project/app/config"
+	"BE-Project/app/routes"
 	"BE-Project/helper"
+	"BE-Project/middleware"
 	"log"
 	"os"
 
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
+	cors "github.com/rs/cors/wrapper/gin"
 	"gorm.io/gorm"
 )
 
@@ -51,11 +54,11 @@ func NewRouter() *gin.Engine {
 	/**
 	@description Init All Route
 	*/
-	// routes.NewAuthenticationRoutes(db, router)
+	routes.NewProjectRoutes(db, router)
 	// routes.NewUserRoutes(db, router)
 	// // routes.NewRoleRoutes(db, router)
-	// router.Use(middleware.ErrorHandler())
-	// router.Use(cors.Default())
+	router.Use(middleware.ErrorHandler())
+	router.Use(cors.Default())
 
 	return router
 }
