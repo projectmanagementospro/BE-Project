@@ -1,7 +1,7 @@
 package middleware
 
 import (
-	"hendralijaya/user-management-project/model/web"
+	"BE-Project/model/web"
 	"net/http"
 	"strings"
 
@@ -43,7 +43,7 @@ func ErrorHandler() gin.HandlerFunc {
 			if err.Meta == "VALIDATION_ERROR" {
 				validationErrors(c, err)
 				return
-			}else if err.Meta == "NOT_FOUND" {
+			} else if err.Meta == "NOT_FOUND" {
 				notFoundError(c, err)
 				return
 			}
@@ -55,7 +55,6 @@ func ErrorHandler() gin.HandlerFunc {
 		}
 	}
 }
-
 
 func validationErrors(c *gin.Context, err *gin.Error) {
 	splittedError := strings.Split(err.Error(), "\n")

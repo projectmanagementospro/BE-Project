@@ -1,16 +1,13 @@
 package main
 
 import (
-	"hendralijaya/user-management-project/app/config"
-	"hendralijaya/user-management-project/app/routes"
-	"hendralijaya/user-management-project/helper"
-	"hendralijaya/user-management-project/middleware"
+	"BE-Project/app/config"
+	"BE-Project/helper"
 	"log"
 	"os"
 
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
-	cors "github.com/rs/cors/wrapper/gin"
 	"gorm.io/gorm"
 )
 

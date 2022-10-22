@@ -1,8 +1,8 @@
 package config
 
 import (
-	"hendralijaya/user-management-project/helper"
-	"hendralijaya/user-management-project/model/domain"
+	"BE-Project/helper"
+	"BE-Project/model/domain"
 
 	"github.com/joho/godotenv"
 	"gorm.io/driver/postgres"
@@ -23,7 +23,7 @@ func NewDB() *gorm.DB {
 	dbURL := "postgres://root:root@172.31.1.3:5432/user-management?sslmode=disable"
 	db, err := gorm.Open(postgres.Open(dbURL), &gorm.Config{})
 	helper.PanicIfError(err)
-	db.AutoMigrate(&domain.User{}, &domain.Role{})
+	db.AutoMigrate(&domain.Project{})
 	return db
 }
 
