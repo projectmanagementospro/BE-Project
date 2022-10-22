@@ -28,11 +28,6 @@ func NewProjectController(projectService service.ProjectService) ProjectControll
 
 func (c *projectController) All(context *gin.Context) {
 	projects := c.projectService.All()
-	webResponse := web.WebResponse{
-		Code:   http.StatusOK,
-		Status: "Success",
-		Errors: "",
-		Data:   projects,
-	}
+	webResponse := web.NewWebSuccessResponse(http.StatusOK, "success", projects)
 	context.JSON(http.StatusOK, webResponse)
 }
