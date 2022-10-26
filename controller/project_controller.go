@@ -24,14 +24,14 @@ type ProjectController interface {
 type projectController struct {
 	projectService service.ProjectService
 	jwtService     service.JWTService
-	logger 			 	 helper.Log
+	logger         helper.Log
 }
 
 func NewProjectController(projectService service.ProjectService, jwtService service.JWTService, logger helper.Log) ProjectController {
 	return &projectController{
 		projectService: projectService,
-		jwtService		: jwtService,
-		logger				: logger,
+		jwtService:     jwtService,
+		logger:         logger,
 	}
 }
 
@@ -78,7 +78,7 @@ func (ctrl *projectController) Insert(context *gin.Context) {
 		validationError.Logf(err)
 		return
 	}
-	project, err := ctrl.projectService.Create(request)
+	project, _ := ctrl.projectService.Create(request)
 	webResponse := web.NewWebSuccessResponse(http.StatusOK, "success", project)
 	context.JSON(http.StatusOK, webResponse)
 	token := context.GetHeader("Authorization")
